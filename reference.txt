@@ -1,0 +1,215 @@
+let read =await usermodel.findOneAndUpdate({email:req.cookies.email},{
+        $push:{
+            cart:"hello 3"
+        }
+    })
+
+
+
+
+
+
+    let read =await productmodel.find({productimage:cartimage})
+    console.log(read)
+    
+
+    if(read){
+        let read2 =await usermodel.find({email :req.cookies.email}).populate("cart")
+    console.log(read2)
+    }
+
+
+    <main>
+let user =await usermodel.findOne({email:req.cookies.email})
+    user.cart.push(cartimage)
+    await user.save() 
+    cart.forEach(async function(e){
+        let find= await productmodel.find({productimage:cartimage})
+        console.log(find)
+        res.render("cart",{find})
+    })
+    </main>
+
+
+
+
+
+
+
+bcrypt.genSalt(10,(err,salt)=>{
+                bcrypt.hash(password,salt,async(err,hash)=>{
+                    let user = await usermodel.create({
+                        fullname:fullname,
+                        email:email,
+                        password:hash,
+    
+                    })
+                    let token =user.email
+                    res.cookie("email",token)
+                    let suc= req.flash("logined","Welcome to Pack me ")
+                    res.redirect("/home")
+                })
+            })
+        }
+        
+
+
+
+
+
+<div><h3 class="hy">GET-IN-TOUCH:</h3></div>
+                    <div class="piv"><a href=""><img src="/images/bag.png" alt="" height="100%"></a></div>
+                    <div class="piv"><a href=""><img src="/images/bag.png" alt="" height="100%"></a></div>
+                    <div class="piv"><a href=""><img src="/images/bag.png" alt="" height="100%"></a></div>
+                    <div class="piv"><a href=""><img src="/images/bag.png" alt="" height="100%"></a></div>
+                    
+
+
+
+
+
+
+
+else{
+            if(password.length<8){
+                let suc= req.flash("error","password must containes more than 8 characters")
+                res.redirect("/")
+            }
+            else{
+                if(phone.length<10 || phone.length>10){
+                    let suc= req.flash("error","phone number is invalid!should be 10 digits")
+                    res.redirect("/")
+                }else{
+                    // if(city.length==0 || city.length<3){
+                    //     let suc= req.flash("error","plese provide a proper city")
+                    //     res.redirect("/")  
+                    
+                        bcrypt.genSalt(10,(err,salt)=>{
+                            bcrypt.hash(password,salt,async(err,hash)=>{
+                                let user = await usermodel.create({
+                                    fullname:fullname,
+                                    email:email,
+                                    phone:phone,
+                                    password:hash,
+                                    state:city,
+                
+                                })
+                                let token =user.email
+                                res.cookie("email",token)
+                                let suc= req.flash("logined","Welcome to Pack me ")
+                                res.redirect("/home")
+                            })
+                        })
+                    
+                    
+                    }
+                }
+               
+            }
+        }
+
+
+
+  let done=await ordermodel.create({
+         
+           email:req.cookies.email,
+           contact:phone,
+           productname:productname,
+           productdesc:productdesc,
+           productimage:productimage,
+           productprice:productprice,
+           paymentType:mode,
+   
+       })
+
+let suc=req.flash("logined")
+        res.render("home",{suc})
+
+let suc=req.flash("error")
+    res.cookie("email","")
+    res.render("index",{suc})
+
+
+
+
+<% product.forEach(function(product) { %>
+            <div class="item">
+                <div class="image">
+                    <img src="<%= product.productimage %>"  height="80%" alt="">
+                </div>
+                <div class="info">
+                    <h4><%= product.productname %></h4>
+                    <h4><%= product.productdesc %></h4>
+                    
+                    <h4>Delivery charges:₹40</h4>
+                    <h4>₹<%= product.productprice %></h4>
+                    <hr>
+                    <div class="by"> <h3>Total:₹<%= product.productprice + 40 %></h3> 
+                    </div>
+                    <form action="/buynow" method="post">
+                        <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                        <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                        <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                        <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                        <input  class="button" type="submit" value="buy now +" name="" id="">
+                    </form>
+                    
+                    
+                       
+                    </div>
+                    <form action="/removecart" method="post">
+                        <input type="hidden" value="product.productprice" name="productprice" id="">
+                        <input  class="button" type="submit" value="remove from cart" name="" id="">
+                    </form>
+                   
+                </div>
+            </div>
+            <% })%>
+
+
+
+
+
+
+let suc=req.flash("logined")
+    res.render("home",{suc})
+
+
+
+async function main() {
+    // send mail with defined transport object
+    const info = await transporter.sendMail({
+      from: '"Pack-Me.official" <md.packme.official@gmail.com>', // sender address
+      to: "sahilsahu7816@gmail.com", // list of receivers
+      subject: "Dear user", // Subject line
+      text: "Dear useer \n this is from PACK_me official", // plain text body
+    
+    });
+  
+    console.log("Message sent: %s", info.messageId);
+    // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
+  }
+  
+  main().catch(console.error);\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+console.log(shop_name)
+    let shopupper=shop_name.toUpperCase()
+    let ShopId=shopupper.substring(0,5)
+    console.log(ShopId)
+    
+    finalId = ShopId+"PKM"+"24"
+    console.log(finalId)
+    shopmodel.create({
+        shopname:shop_name,
+        shopaddress:shop_address,
+        Shopphone1:shop_phone1,
+        Shopphone2:shop_phone2,
+        state:state,
+        shopcity:shop_city,
+        pin:pin,
+        companyowner:owner,
+        password:password,
+    })

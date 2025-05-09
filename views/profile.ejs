@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="/styles/profile.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7O4WhwpmPZB6CdEjkEQXDSIiRCvgjyvghzTy-lOSFExdXG2l2BI4Vpf8t-MBf4J-viw&usqp=CAU">
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner">
+          <div></div>   
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+        </div>
+      </div>
+    <div class="container">
+        <div class="nav">
+            <h2><span class="pack">PACK-ME</span></h2>
+            <div class="nav-2">
+                <h3 class="box"><a href="/home">HOME</a></h3>
+                <h3 class="box"><a href="/new ">NEW LAUNCHES</a></h3>
+                <h3 class="box"><a href="/collection">COLLECTIONS</a></h3>
+                <h3 class="box"><a href="/admin">BE A SELLER</a></h3>
+                <h3 class="box"><a href="/contact">GET-IN-TOUCH</a></h3>
+            </div>
+            <div class="nav-3">
+                <div class="no"><a href="/profile"><img  src="/images/account-profile.png" height="100%" alt=""></a></div>
+
+                <div class="yes"><a href="/cartread"><img  src="/images/bag.png" alt="" height="60%"></a></div>
+            </div>
+        </div>
+        <div class="sub">
+            <div class="photo">
+                
+                <div class="info">
+                    <h3>Name: <%= user.fullname %></h3>
+                    <h3>Email: <%= user.email %></h3>
+                    <h3>Phone No: <%= user.phone %></h3>
+                    <h3>location:<%=user.location %></h3>
+                    <a  href="/"><button class="bt">Logout</button></a>
+
+                </div>
+            </div>
+
+            <div class="sec">
+                <div class="first">
+                    <div class="head">CART</div>
+                    <a href="/cartread"><div class="content">
+                        <%= cart%>
+                        <h6> Item</h6>
+                    </div></a>
+
+                </div>
+                <div class="first">
+                    <div class="head">Orders</div>
+                    <a href="/myorders"><div class="content">
+                        <%=orders%>
+                        <h6> Item</h6>
+                    </div></a>
+                </div>
+            </div>
+        </div>
+        <H1 style="text-align:center">THANK YOU FOR BEING OUR CUSTOMER</H1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascripts/backpack.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="/styles/carts.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7O4WhwpmPZB6CdEjkEQXDSIiRCvgjyvghzTy-lOSFExdXG2l2BI4Vpf8t-MBf4J-viw&usqp=CAU">
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner">
+          <div></div>   
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+        </div>
+      </div>
+    
+        <% if (suc.length>0) { %>
+            <div class="suc"><%=suc%></div>
+          <% } %>
+        <div class="nav">
+            <h2><span class="pack">PACK-ME</span></h2>
+            <div class="nav-2">
+                <h4 class="box"><a href="/home">HOME</a></h4>
+                <h4 class="box"><a href="/new ">NEW LAUNCHES</a></h4>
+                <h4 class="box"><a href="/collection">COLLECTIONS</a></h4>
+                <h4 class="box"><a href="/admin">BE A SELLER</a></h4>
+                <h3 class="box"><a href="/contact">GET-IN-TOUCH</a></h3>
+            </div>
+            <div class="nav-3">
+                <div class="no"><a href="/profile"><img  src="/images/account-profile.png" height="100%" alt=""></a></div>
+
+                <div class="yes"><a href="/cartread"><img  src="/images/bag.png" alt="" height="100%"></a></div>
+            </div>
+
+        </div>
+        
+      
+       <div class="sub1">
+        <H1 style="text-align: center;">WELCOME TO CART</H1>
+        <%if(product.length== 0){%>
+            <h1>no products found</h1>
+        <%}%>
+        <% product.forEach(function(product) { %>
+            <div class="item">
+                <div class="image">
+                    <img src="<%= product.productimage %>"  height="80%" alt="">
+                </div>
+                <div class="info">
+                    <h4><%= product.productname %></h4>
+                    <h4><%= product.productdesc %></h4>
+                    
+                    <h4>Delivery charges:₹40</h4>
+                    <h4>₹<%= product.productprice %></h4>
+                    <hr>
+                    <div class="by"> <h3>Total:₹<%= product.productprice + 40 %></h3> 
+                    </div>
+                    <form action="/buynow" method="post">
+                        <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                        <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                        <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                        <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                        <input  class="button" type="submit" value="buy now +" name="" id="">
+                    </form>
+                    
+                    
+                       
+                    
+                    <form action="/removecart" method="post">
+                        <input type="hidden" value="product.productprice" name="productprice" id="">
+                        <input id="button"  type="submit" value="remove from cart" name="" id="">
+                    </form>
+                    <form action="/knowmore" method="post">
+                        <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                        <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                        <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                        <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                        <input  class="ab" type="submit" value="review product" name="" id="">
+                    </form>
+                   
+                </div>
+            </div>
+            <% })%>
+        
+        
+
+          
+            
+       </div>
+
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascripts/cart.js"></script>
+</body>
+</html>

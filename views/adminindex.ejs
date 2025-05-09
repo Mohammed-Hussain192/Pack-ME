@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>login||register</title>
+    <link rel="stylesheet" href="styles/adminindex.css">
+
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7O4WhwpmPZB6CdEjkEQXDSIiRCvgjyvghzTy-lOSFExdXG2l2BI4Vpf8t-MBf4J-viw&usqp=CAU">
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner">
+          <div></div>   
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+        </div>
+      </div>
+   
+    <div class="container">
+        <% if (suc.length>0) { %>
+            <div class="suc"><%=suc%></div>
+          <% } %>
+        
+        <div class="first">
+            <div class="inner">
+                <p class="wel">Welcome to <span>PACK-ME SHOP</span></p> 
+               
+                    <form novalidate  action="/shopregister" method="post">
+                        <p class="cre">Create  your Shop in Pack-Me</p>
+                        <input type="text" name="shop_name" id="" placeholder="Shop Name">
+                        <input type="email" name="shop_address" id="" placeholder="Shop Address">
+                        <input type="text" name="shop_phone1" id="" placeholder="First shop Phone number">
+                        <input type="text" name="shop_phone2" id="" placeholder="Second shop Phone number">
+                        <select name="state" id="states">
+                            <option value="">Select a state</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Puducherry">Puducherry</option>
+                        </select>
+                        <input type="text" name="shop_city" id="" placeholder="Enter the city where shop is located">
+                        <input type="text" name="pin" id="" placeholder="pin Code">
+                        <input type="text" name="owner" id="" placeholder="Owner Name">
+                        <input type="text" name="shop_email" id="" placeholder="Shop Email">
+                        
+                        <input type="password" name="password" id="" placeholder="Set password">
+                        <input type="submit" class="button" value="Create My Account" name="" id="">
+                    </form>
+                   
+            </div>
+        </div>
+        <div class="second">
+            <div class="inner2">
+               
+                <form novalidate action="/shoplogin" method="post">
+                    <p class="cre2">Login Your Shop</p>
+                    <input type="email" name="shopemail" id="" placeholder="Email">
+                    <input type="password" name="password" id="" placeholder="Password">
+                    <a class="forget" href="/forgetpassword">forget password?</a>
+                    <input type="submit" value="Login" class="button2" name="" id="">
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="javascripts/adminindex.js"></script>
+</body>
+</html>

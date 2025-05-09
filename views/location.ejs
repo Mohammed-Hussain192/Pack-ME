@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/location.css">
+</head>
+<body>
+  <div class="loader">
+    <div class="spinner">
+      <div></div>   
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+    </div>
+  </div>
+    
+<div class="container">
+  <div class="heading">Provide Your details </div>
+  <form class="form" action="/buynow" method="post">
+    <div class="input-field">
+      <input
+        required=""
+        autocomplete="off"
+        type="text"
+        name="phone"
+        id="username"
+        placeholder="phone number which we connect through you"
+      />
+      
+    </div>
+    <div class="input-field">
+      <input
+        required=""
+        autocomplete="off"
+        type="text"
+        name="location"
+        id="email"
+        placeholder="location"
+      />
+      
+    </div>
+    <div class="input-field">
+      <input
+        required=""
+        autocomplete="off"
+        type="txt"
+        name="pin"
+        id="password"
+        placeholder="pin"
+      />
+      
+    </div>
+    <div class="input-field">
+        <select id="gender"  name="mode" required>
+            <option value="">Mode of Payment</option>
+            <option value="COD">Cash On Delivery</option>
+            
+        </select>
+    </div>
+
+    <div class="btn-container">
+      <button type="submit" class="btn">Submit</button>
+      
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

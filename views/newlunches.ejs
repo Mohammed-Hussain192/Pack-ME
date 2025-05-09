@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Lunches</title>
+    <link rel="stylesheet" href="/styles/newl.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7O4WhwpmPZB6CdEjkEQXDSIiRCvgjyvghzTy-lOSFExdXG2l2BI4Vpf8t-MBf4J-viw&usqp=CAU">
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner">
+          <div></div>   
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+          <div></div>    
+        </div>
+      </div>
+<div class="container">
+    <% if (suc.length>0) { %>
+        <div class="suc"><%=suc%></div>
+      <% } %>
+    <div class="nav">
+        <h2><span class="pack">PACK-ME</span></h2>
+        <div class="nav-2">
+            <h3 class="box"><a href="/home">HOME</a></h3>
+            <h3 class="box"><a href="/new ">NEW LAUNCHES</a></h3>
+            <h3 class="box"><a href="/collection">COLLECTIONS</a></h3>
+            <h3 class="box"><a href="/admin">BE A SELLER</a></h3>
+            <h3 class="box"><a href="/admin">GET IN TOUCH</a></h3>
+        </div>
+        <div class="nav-3">
+            <div class="no"><a href="/profile"><img  src="/images/account-profile.png" height="100%" alt=""></a></div>
+
+                <div class="yes"><a href="/cartread"><img  src="/images/bag.png" alt="" height="100%"></a></div>
+
+        </div>
+    </div>
+    <div class="sub1">
+        <div class="card">
+            
+           <span class="bag">NEW <br> ARRIVALS</span>
+        
+        </div>
+    </div>
+    <div class="sub2">
+        <h3 class="hu">NEW LUNCHES IN BACKPACKS</h3>
+        <div id="under1" class="under">
+          
+            <% products.forEach(function(product){ %>
+                <div id="item1" class="item">
+                    
+                    <img name="" src= <%= product.productimage %> alt="">
+                    <div class="data">
+                        <h3 name="productname" ><%= product.productname%></h3>
+                        <h3 name="productprice" > ₹<%= product.productprice %></h3>
+                        
+                    </div>
+                    <form action="/cart" method="post">
+                       <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                       <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                       <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                       <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                       <input  class="a" type="submit" value="add to cart +" name="" id="">
+                    </form>
+                    <form action="/knowmore" method="post">
+                        <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                        <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                        <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                        <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                        <input  class="ab" type="submit" value="+" name="" id="">
+                     </form>
+                   
+                </div>
+                
+                
+            <% })%>
+            <BUtton class="ex"><a target="_blank" href="/backpack">Explore  --></a></BUtton>
+
+
+
+            
+
+        </div>
+        
+        
+    </div>
+    <div><br> <br></div>
+    <div class="sub2">
+        <h3 class="hu">NEW LUNCHES IN TOTE BAGS</h3>
+        <div id="under2" class="under">
+          
+            <% products1.forEach(function(product){ %>
+                <div id="item2" class="item">
+                    
+                    <img name="" src= <%= product.productimage %> alt="">
+                    <div class="data">
+                        <h3 name="productname" ><%= product.productname%></h3>
+                        <h3 name="productprice" > ₹<%= product.productprice %></h3>
+                        
+                    </div>
+                    <form action="/cart" method="post">
+                       <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                       <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                       <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                       <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                       <input  class="a" type="submit" value="add to cart +" name="" id="">
+                    </form>
+                    <form action="/knowmore" method="post">
+                        <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                        <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                        <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                        <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                        <input  class="ab" type="submit" value="+" name="" id="">
+                     </form>
+                   
+                </div>
+                
+                
+            <% })%>
+            <BUtton class="ex"><a target="_blank"  href="/totebag">Explore  --></a></BUtton>
+
+
+
+            
+
+        </div>
+        
+        
+    </div>
+    <div><br><br></div>
+    <div class="sub2">
+        <h3 class="hu">NEW LUNCHES IN WHEEL DUFFELS</h3>
+        <div id="under3" class="under">
+          
+            <% products2.forEach(function(product){ %>
+                <div id="item3" class="item">
+                    
+                    <img name="" src= <%= product.productimage %> alt="">
+                    <div class="data">
+                        <h3 name="productname" ><%= product.productname%></h3>
+                        <h3 name="productprice" > ₹<%= product.productprice %></h3>
+                        
+                    </div>
+                    <form action="/cart" method="post">
+                       <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                       <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                       <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                       <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                       <input  class="a" type="submit" value="add to cart +" name="" id="">
+                    </form>
+                    <form action="/knowmore" method="post">
+                        <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                        <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                        <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                        <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                        <input  class="ab" type="submit" value="+" name="" id="">
+                     </form>
+                   
+                </div>
+                
+                
+            <% })%>
+            <BUtton class="ex"><a target="_blank"  href="/wheelbag">Explore  --></a></BUtton>
+
+
+
+            
+
+        </div>
+        
+        
+    </div>
+    <div><br><br></div>
+    <div class="sub2">
+        <h3 class="hu">NEW LUNCHES IN GYM BAGS</h3>
+        <div id="under4" class="under">
+          
+            <% products3.forEach(function(product){ %>
+                <div id="item4" class="item">
+                    
+                    <img name="" src= <%= product.productimage %> alt="">
+                    <div class="data">
+                        <h3 name="productname" ><%= product.productname%></h3>
+                        <h3 name="productprice" > ₹<%= product.productprice %></h3>
+                        
+                    </div>
+                    <form action="/cart" method="post">
+                       <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                       <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                       <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                       <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                       <input  class="a" type="submit" value="add to cart +" name="" id="">
+                    </form>
+                     <form  action="/knowmore" method="post">
+                        <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                        <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                        <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                        <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                        <input target="_blank" class="ab" type="submit" value="+" name="" id="">
+                     </form>
+                   
+                </div>
+                
+                
+            <% })%>
+            <BUtton class="ex"><a target="_blank"  href="/gymbags" target="_blank">Explore  --></a></BUtton>
+
+
+
+            
+
+        </div>
+        
+        
+    </div>
+    <h1 class="thank">Thank You</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/javascripts/newlunches.js"></script>
+    
+</body>
+</html>

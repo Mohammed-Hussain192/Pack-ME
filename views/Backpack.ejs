@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backpacks</title>
+    <link rel="stylesheet" href="styles/backpack.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7O4WhwpmPZB6CdEjkEQXDSIiRCvgjyvghzTy-lOSFExdXG2l2BI4Vpf8t-MBf4J-viw&usqp=CAU">
+</head>
+<body>
+  <div class="loader">
+    <div class="spinner">
+      <div></div>   
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+      <div></div>    
+    </div>
+  </div>
+<div class="container">
+    <% if (suc.length>0) { %>
+        <div class="suc"><%=suc%></div>
+      <% } %>
+    <div class="nav">
+        <h2><span class="pack">PACK-ME</span></h2>
+        <div class="nav-2">
+            <h3 class="box"><a href="/home">HOME</a></h3>
+            <h3 class="box"><a href="/new ">NEW LAUNCHES</a></h3>
+            <h3 class="box"><a href="/collection">COLLECTIONS</a></h3>
+            <h3 class="box"><a href="/admin">BE A SELLER</a></h3>
+        </div>
+        <div class="nav-3">
+            <div class="no"><a href="/profile"><img  src="/images/account-profile.png" height="100%" alt=""></a></div>
+
+                <div class="yes"><a href="/cartread"><img  src="/images/bag.png" alt="" height="100%"></a></div>
+
+        </div>
+    </div>
+    <div class="sub1">
+        
+      <video src="videos/backpack.mp4"  autoplay loop muted height="100% " ></video>
+        
+    </div>
+    
+    <div class="sub2">
+      <div class="filter">
+        <form id="priceFilterForm" action="/backpack" method="post">
+          <label>Select a price range:</label>
+    
+          <div>
+            <input type="radio" id="priceLow" name="priceRange" value="0-500">
+            <label for="priceLow">under ₹500</label>
+          </div>
+    
+          <div>
+            <input type="radio" id="priceMedium" name="priceRange" value="500-1000">
+            <label for="priceMedium"> ₹500- ₹1000</label>
+          </div>
+    
+          <div>
+            <input type="radio" id="priceHigh" name="priceRange" value="1000-1500">
+            <label for="priceHigh">₹1000- ₹1500</label>
+          </div>
+    
+          <div>
+            <input type="radio" id="priceVeryHigh" name="priceRange" value="1500-2000">
+            <label for="priceVeryHigh">₹1500- ₹2000</label>
+          </div>
+    
+          <div>
+            <input type="radio" id="pricePremium" name="priceRange" value="2000-2500">
+            <label for="pricePremium">₹2000- ₹2500</label>
+          </div>
+    
+          <button class="abb" type="submit">Apply </button>
+        </form>
+      </div>
+      <%if (products.length ==0) {%>
+            <h1>No products found</h1>
+            <%}%>
+            <div class="under">
+                <% products.forEach(function(product) { %>
+                 <div class="item">
+                     
+                     <img name="" src= <%= product.productimage %> alt="">
+                     <div class="data">
+                         <div name="productname" ><%= product.productname%></div>
+                         <div name="productprice" > ₹<%= product.productprice %></div>
+                      </div>
+                      <div class="done">
+                        <div>
+                          <form action="/cart" method="post">
+                          <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                          <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                          <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                          <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                          <input class="a" type="submit" value="add to cart +" name="" id="">
+                          </form>
+                        </div>
+                        <div>
+                          <form  action="/knowmore" method="post">
+                          <input type="hidden" name="productimage" value="<%= product.productimage %>" id="">
+                          <input type="hidden" name="productname" value="<%= product.productname%>" id="">
+                          <input type="hidden" name="productprice" value="<%= product.productprice %>" id="">
+                          <input type="hidden" name="productdesc" value="<%= product.productdesc %>" id="">
+                          <input target="_blank" class="ab" type="submit" value="+" name="" id="">
+                          </form>
+                      </div>
+                      <%if (product.productrate == 5 || product.productrate =="") {%>
+                      <img src="images/5s.png"  height="15%" alt="">
+                      <% }%>
+                      <%if (product.productrate == 4) {%>
+                        <img src="images/4s.png"  width="15%" alt="">
+                        <% }%>
+                      <%if (product.productrate == 3) {%>
+                          <img src="images/3s.png"  width="15%" alt="">
+                          <% }%>
+                      <%if (product.productrate == 2) {%>
+                            <img src="images/2s.png"  width="15%" alt="">
+                            <% }%>
+                      <%if (product.productrate == 1) {%>
+                              <img src="images/3s.png"  width="15%" alt="">
+                              <% }%>
+
+                    </div>
+                 </div>
+                 
+                 
+             <% })%>
+     
+     
+     
+     
+     
+     
+     
+             </div>
+
+        
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascripts/backpack.js"></script>
+</body>
+</html>
